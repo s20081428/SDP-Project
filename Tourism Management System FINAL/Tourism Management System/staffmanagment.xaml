@@ -1,0 +1,509 @@
+﻿<Page x:Class="Tourism_Management_System.staffmanagment"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Tourism_Management_System"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1199"
+      Title="staffmanagment">
+
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="#FFE3E3E3" Opacity="0.925"/>
+        </Grid.Background>
+        <GroupBox x:Name="groupBox" Header="Add Staff" HorizontalAlignment="Left" Margin="111,88,0,0" VerticalAlignment="Top" Height="173" Width="977" BorderBrush="#FF080808" FontSize="14"/>
+        <Label x:Name="label" Content="Staff ID:" HorizontalAlignment="Left" Margin="125,115,0,0" VerticalAlignment="Top" Width="61" FontSize="14"/>
+
+        <TextBox x:Name="txt_staffid" HorizontalAlignment="Left" Height="28" Margin="191,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14"/>
+        <Label x:Name="label_Copy" Content="Staff Name:" HorizontalAlignment="Left" Margin="349,114,0,0" VerticalAlignment="Top" Width="87" FontSize="14"/>
+        <TextBox x:Name="txt_staffname" HorizontalAlignment="Left" Height="28" Margin="441,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14"/>
+        <Label x:Name="label_Copy1" Content="Password:" HorizontalAlignment="Left" Margin="600,113,0,0" VerticalAlignment="Top" Width="78" FontSize="14"/>
+        <TextBox x:Name="txt_staffpassword" HorizontalAlignment="Left" Height="28" Margin="678,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14"/>
+        <ComboBox x:Name="cb_Gender" HorizontalAlignment="Left" Margin="191,163,0,0" VerticalAlignment="Top" Width="120" Loaded="cb_Gender_Loaded" FontSize="14" Height="28"/>
+        <Label x:Name="label_Copy2" Content="Gender:" HorizontalAlignment="Left" Margin="125,163,0,0" VerticalAlignment="Top" Width="61" FontSize="14"/>
+        <ComboBox x:Name="cb_Center" HorizontalAlignment="Left" Margin="441,163,0,0" VerticalAlignment="Top" Width="120" Loaded="cb_Center_Loaded" FontSize="14" Height="28"/>
+        <Label x:Name="label_Copy3" Content="Center:" HorizontalAlignment="Left" Margin="375,163,0,0" VerticalAlignment="Top" Width="61" FontSize="14"/>
+        <ComboBox x:Name="cb_Position" HorizontalAlignment="Left" Margin="678,163,0,0" VerticalAlignment="Top" Width="120" Loaded="cb_Position_Loaded" FontSize="14" Height="28"/>
+        <Label x:Name="label_Copy4" Content="Position:" HorizontalAlignment="Left" Margin="600,163,0,0" VerticalAlignment="Top" Width="73" FontSize="14"/>
+        <ComboBox x:Name="cb_type" HorizontalAlignment="Left" Margin="909,163,0,0" VerticalAlignment="Top" Width="120" Loaded="cb_type_Loaded" FontSize="14" Height="28"/>
+        <Label x:Name="label_Copy5" Content="Type:" HorizontalAlignment="Left" Margin="857,163,0,0" VerticalAlignment="Top" Width="47" FontSize="14"/>
+        <Label x:Name="label_Copy6" Content="Salary:" HorizontalAlignment="Left" Margin="850,114,0,0" VerticalAlignment="Top" Width="54" FontSize="14"/>
+        <TextBox x:Name="txt_salary" HorizontalAlignment="Left" Height="27" Margin="909,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14"/>
+        <Button x:Name="btn_addStaff" Content="Add" HorizontalAlignment="Left" Margin="909,207,0,0" VerticalAlignment="Top" Width="120" Height="30" Click="btn_addStaff_Click" FontSize="14" RenderTransformOrigin="0.483,0.5"/>
+        <Label x:Name="label_Copy7" Content="Staff Email:" HorizontalAlignment="Left" Margin="127,207,0,0" VerticalAlignment="Top" Width="98" FontSize="14"/>
+        <TextBox x:Name="txt_staffEmail" HorizontalAlignment="Left" Height="28" Margin="230,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="14"/>
+        <Label x:Name="label1" Content="@tt.com" HorizontalAlignment="Left" Margin="310,209,0,0" VerticalAlignment="Top" Width="367" FontSize="14"/>
+        <GroupBox x:Name="groupBox_Copy" Header="Edit &amp; Delete Staff/Customer" HorizontalAlignment="Left" Margin="10,276,0,0" VerticalAlignment="Top" Height="484" Width="1179" BorderBrush="#FF080808" FontSize="14">
+            <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="460" VerticalAlignment="Top" Width="1169" Margin="0,0,-2,-2">
+                <TabItem Header="Staff">
+                    <Grid Background="#FFE3E3E3">
+                        <DataGrid x:Name="dg_editstaff" Margin="0,48,0,0"  VerticalContentAlignment="Center" AutoGenerateColumns="False" RowHeight="35" HeadersVisibility="Column" FontSize="15"  HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" ColumnWidth="*" Background="{x:Null}" HorizontalGridLinesBrush="#FF8D8D8D" VerticalGridLinesBrush="White" GridLinesVisibility="Horizontal" ColumnHeaderHeight="35" ScrollViewer.HorizontalScrollBarVisibility="Auto" IsReadOnly="True" Loaded="dg_editstaff_Loaded" BorderBrush="{x:Null}">
+                            <DataGrid.Resources>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"  Color="#87ceeb"/>
+                                <Style TargetType="{x:Type DataGrid}" >
+                                    <Setter Property="Background" Value="#FFF" />
+                                    <Setter Property="AlternationCount" Value="2" />
+                                </Style>
+
+                                <Style TargetType="{x:Type DataGridColumnHeader}"  >
+                                    <Setter Property="Foreground" Value="White" />
+                                    <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
+                                    <Setter Property="Padding" Value="5,0,5,0"/>
+                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                </Style>
+
+                                <Style TargetType="{x:Type DataGridRow}">
+                                    <Style.Triggers>
+                                        <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                                            <Setter Property="Background" Value="#FFFFFF"></Setter>
+                                        </Trigger>
+                                        <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                                            <Setter Property="Background" Value="#EEE"></Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+
+                                <Style x:Key="ScrollBarTrackThumb"
+        TargetType="{x:Type Thumb}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Thumb}">
+                                                <Grid x:Name="Grid">
+                                                    <Rectangle HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                Width="Auto"
+                                Height="Auto"
+                                Fill="Transparent" />
+                                                    <Border x:Name="CornerScrollBarRectangle"
+                            CornerRadius="5"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Width="Auto"
+                            Height="Auto"
+                            Margin="0,1,0,1"
+                            Background="{TemplateBinding Background}" />
+                                                </Grid>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="Tag"
+                                Value="Horizontal">
+                                                        <Setter TargetName="CornerScrollBarRectangle"
+                                Property="Width"
+                                Value="Auto" />
+                                                        <Setter TargetName="CornerScrollBarRectangle"
+                                Property="Height"
+                                Value="6" />
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+
+                                <Style TargetType="{x:Type DataGridColumnHeadersPresenter}">
+                                    <Setter Property="Grid.ColumnSpan" Value="2" />
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type DataGridColumnHeadersPresenter}">
+                                                <Grid>
+                                                    <DataGridColumnHeader IsHitTestVisible="False" Name="PART_FillerColumnHeader"/>
+                                                    <ItemsPresenter/>
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+
+                                <Style TargetType="{x:Type ScrollBar}">
+                                    <Setter Property="Stylus.IsFlicksEnabled" Value="false" />
+                                    <Setter Property="Foreground" Value="#ADABAB" />
+                                    <Setter Property="Background" Value="Transparent" />
+                                    <Setter Property="Width" Value="7" />
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type ScrollBar}">
+                                                <Grid x:Name="GridRoot" Width="7" Background="{TemplateBinding Background}">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0.00001*" />
+                                                    </Grid.RowDefinitions>
+                                                    <Track x:Name="PART_Track" Grid.Row="0" IsDirectionReversed="true" Focusable="false">
+                                                        <Track.Thumb>
+                                                            <Thumb x:Name="Thumb" Background="{TemplateBinding Foreground}" Style="{DynamicResource ScrollBarTrackThumb}" />
+                                                        </Track.Thumb>
+                                                        <Track.IncreaseRepeatButton>
+                                                            <RepeatButton x:Name="PageUp" Command="ScrollBar.PageDownCommand" Opacity="0" Focusable="false" />
+                                                        </Track.IncreaseRepeatButton>
+                                                        <Track.DecreaseRepeatButton>
+                                                            <RepeatButton x:Name="PageDown" Command="ScrollBar.PageUpCommand" Opacity="0" Focusable="false" />
+                                                        </Track.DecreaseRepeatButton>
+                                                    </Track>
+                                                </Grid>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger SourceName="Thumb" Property="IsMouseOver" Value="true">
+                                                        <Setter Value="{DynamicResource ButtonSelectBrush}" TargetName="Thumb" Property="Background" />
+                                                    </Trigger>
+                                                    <Trigger SourceName="Thumb" Property="IsDragging" Value="true">
+                                                        <Setter Value="{DynamicResource DarkBrush}" TargetName="Thumb" Property="Background" />
+                                                    </Trigger>
+
+                                                    <Trigger Property="IsEnabled" Value="false">
+                                                        <Setter TargetName="Thumb" Property="Visibility" Value="Collapsed" />
+                                                    </Trigger>
+                                                    <Trigger Property="Orientation" Value="Horizontal">
+                                                        <Setter TargetName="GridRoot" Property="LayoutTransform">
+                                                            <Setter.Value>
+                                                                <RotateTransform Angle="-90" />
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                        <Setter TargetName="PART_Track" Property="LayoutTransform">
+                                                            <Setter.Value>
+                                                                <RotateTransform Angle="-90" />
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                        <Setter Property="Width" Value="Auto" />
+                                                        <Setter Property="Height" Value="8" />
+                                                        <Setter TargetName="Thumb" Property="Tag" Value="Horizontal" />
+                                                        <Setter TargetName="PageDown" Property="Command" Value="ScrollBar.PageLeftCommand" />
+                                                        <Setter TargetName="PageUp" Property="Command" Value="ScrollBar.PageRightCommand" />
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </DataGrid.Resources>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding StaffID}" ClipboardContentBinding="{x:Null}" Header="StaffID">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding StaffName}" ClipboardContentBinding="{x:Null}" Header="StaffName">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Gender}" ClipboardContentBinding="{x:Null}" Header="Gender">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Center}" ClipboardContentBinding="{x:Null}" Header="Center">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Email}" ClipboardContentBinding="{x:Null}" Header="Email" Width="100">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Pass}" ClipboardContentBinding="{x:Null}" Header="Pass">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Position}" ClipboardContentBinding="{x:Null}" Header="Position" Width="200">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Salary}" ClipboardContentBinding="{x:Null}" Header="Salary">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Ctype}" ClipboardContentBinding="{x:Null}" Header="Ctype">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Late}" ClipboardContentBinding="{x:Null}" Header="Late">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTemplateColumn Header="" Width="*"  >
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Click="btn_edit_staff">Edit</Button>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="" Width="*"  >
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Click="btn_delete_staff">Delete</Button>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Button x:Name="btn_Refresh" Content="Refresh" HorizontalAlignment="Left" Margin="1029,13,0,0" VerticalAlignment="Top" Width="120" Height="30" Click="btn_Refresh_Click" FontSize="14" RenderTransformOrigin="0.483,0.5"/>
+
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Customer">
+                    <Grid Background="#FFE3E3E3">
+                        <DataGrid x:Name="dg_editcust" Margin="0,48,0,0"  VerticalContentAlignment="Center" AutoGenerateColumns="False" RowHeight="35" HeadersVisibility="Column" FontSize="15"  HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" ColumnWidth="*" Background="{x:Null}" HorizontalGridLinesBrush="#FF8D8D8D" VerticalGridLinesBrush="White" GridLinesVisibility="Horizontal" ColumnHeaderHeight="35" ScrollViewer.HorizontalScrollBarVisibility="Auto" IsReadOnly="True" BorderBrush="{x:Null}" Loaded="dg_editcust_Loaded">
+                            <DataGrid.Resources>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"  Color="#87ceeb"/>
+                                <Style TargetType="{x:Type DataGrid}" >
+                                    <Setter Property="Background" Value="#FFF" />
+                                    <Setter Property="AlternationCount" Value="2" />
+                                </Style>
+
+                                <Style TargetType="{x:Type DataGridColumnHeader}"  >
+                                    <Setter Property="Foreground" Value="White" />
+                                    <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
+                                    <Setter Property="Padding" Value="5,0,5,0"/>
+                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                </Style>
+
+                                <Style TargetType="{x:Type DataGridRow}">
+                                    <Style.Triggers>
+                                        <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                                            <Setter Property="Background" Value="#FFFFFF"></Setter>
+                                        </Trigger>
+                                        <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                                            <Setter Property="Background" Value="#EEE"></Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+
+                                <Style x:Key="ScrollBarTrackThumb"
+        TargetType="{x:Type Thumb}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Thumb}">
+                                                <Grid x:Name="Grid">
+                                                    <Rectangle HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                Width="Auto"
+                                Height="Auto"
+                                Fill="Transparent" />
+                                                    <Border x:Name="CornerScrollBarRectangle"
+                            CornerRadius="5"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Width="Auto"
+                            Height="Auto"
+                            Margin="0,1,0,1"
+                            Background="{TemplateBinding Background}" />
+                                                </Grid>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="Tag"
+                                Value="Horizontal">
+                                                        <Setter TargetName="CornerScrollBarRectangle"
+                                Property="Width"
+                                Value="Auto" />
+                                                        <Setter TargetName="CornerScrollBarRectangle"
+                                Property="Height"
+                                Value="6" />
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+
+                                <Style TargetType="{x:Type DataGridColumnHeadersPresenter}">
+                                    <Setter Property="Grid.ColumnSpan" Value="2" />
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type DataGridColumnHeadersPresenter}">
+                                                <Grid>
+                                                    <DataGridColumnHeader IsHitTestVisible="False" Name="PART_FillerColumnHeader"/>
+                                                    <ItemsPresenter/>
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+
+                                <Style TargetType="{x:Type ScrollBar}">
+                                    <Setter Property="Stylus.IsFlicksEnabled" Value="false" />
+                                    <Setter Property="Foreground" Value="#ADABAB" />
+                                    <Setter Property="Background" Value="Transparent" />
+                                    <Setter Property="Width" Value="7" />
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type ScrollBar}">
+                                                <Grid x:Name="GridRoot" Width="7" Background="{TemplateBinding Background}">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0.00001*" />
+                                                    </Grid.RowDefinitions>
+                                                    <Track x:Name="PART_Track" Grid.Row="0" IsDirectionReversed="true" Focusable="false">
+                                                        <Track.Thumb>
+                                                            <Thumb x:Name="Thumb" Background="{TemplateBinding Foreground}" Style="{DynamicResource ScrollBarTrackThumb}" />
+                                                        </Track.Thumb>
+                                                        <Track.IncreaseRepeatButton>
+                                                            <RepeatButton x:Name="PageUp" Command="ScrollBar.PageDownCommand" Opacity="0" Focusable="false" />
+                                                        </Track.IncreaseRepeatButton>
+                                                        <Track.DecreaseRepeatButton>
+                                                            <RepeatButton x:Name="PageDown" Command="ScrollBar.PageUpCommand" Opacity="0" Focusable="false" />
+                                                        </Track.DecreaseRepeatButton>
+                                                    </Track>
+                                                </Grid>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger SourceName="Thumb" Property="IsMouseOver" Value="true">
+                                                        <Setter Value="{DynamicResource ButtonSelectBrush}" TargetName="Thumb" Property="Background" />
+                                                    </Trigger>
+                                                    <Trigger SourceName="Thumb" Property="IsDragging" Value="true">
+                                                        <Setter Value="{DynamicResource DarkBrush}" TargetName="Thumb" Property="Background" />
+                                                    </Trigger>
+
+                                                    <Trigger Property="IsEnabled" Value="false">
+                                                        <Setter TargetName="Thumb" Property="Visibility" Value="Collapsed" />
+                                                    </Trigger>
+                                                    <Trigger Property="Orientation" Value="Horizontal">
+                                                        <Setter TargetName="GridRoot" Property="LayoutTransform">
+                                                            <Setter.Value>
+                                                                <RotateTransform Angle="-90" />
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                        <Setter TargetName="PART_Track" Property="LayoutTransform">
+                                                            <Setter.Value>
+                                                                <RotateTransform Angle="-90" />
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                        <Setter Property="Width" Value="Auto" />
+                                                        <Setter Property="Height" Value="8" />
+                                                        <Setter TargetName="Thumb" Property="Tag" Value="Horizontal" />
+                                                        <Setter TargetName="PageDown" Property="Command" Value="ScrollBar.PageLeftCommand" />
+                                                        <Setter TargetName="PageUp" Property="Command" Value="ScrollBar.PageRightCommand" />
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </DataGrid.Resources>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding CustID}" ClipboardContentBinding="{x:Null}" Header="CustID">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Surname}" ClipboardContentBinding="{x:Null}" Header="Surname">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding GivenName}" ClipboardContentBinding="{x:Null}" Header="GivenName">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding DateOfBirth}" ClipboardContentBinding="{x:Null}" Header="DateOfBrith">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Gender}" ClipboardContentBinding="{x:Null}" Header="Gender" Width="100">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Passport}" ClipboardContentBinding="{x:Null}" Header="Passport">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding MobileNo}" ClipboardContentBinding="{x:Null}" Header="MobileNo" Width="200">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Nationality}" ClipboardContentBinding="{x:Null}" Header="Nationality">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTemplateColumn Header="" Width="*"  >
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Click="btn_edit_cust">Edit</Button>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="" Width="*"  >
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Click="btn_delete_cust">Delete</Button>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Button x:Name="btn_Refresh_User" Content="Refresh" HorizontalAlignment="Left" Margin="1029,13,0,0" VerticalAlignment="Top" Width="120" Height="30" Click="btn_Refresh_Cust_Click" FontSize="14" RenderTransformOrigin="0.483,0.5"/>
+                        <Button x:Name="btn_Addcust" Content="Add Customer" HorizontalAlignment="Left" Margin="886,13,0,0" VerticalAlignment="Top" Width="120" Height="30" Click="btn_Addcust_Click" FontSize="14" RenderTransformOrigin="0.483,0.5"/>
+
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </GroupBox>
+
+        <Label x:Name="label8" Content="Staff Management" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1199" FontSize="30" Height="71" FontFamily="Segoe UI Semibold">
+            <Label.Background>
+                <SolidColorBrush Color="#FF497BFF" Opacity="0.3"/>
+            </Label.Background>
+        </Label>
+
+
+    </Grid>
+</Page>

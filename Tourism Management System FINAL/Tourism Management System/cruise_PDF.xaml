@@ -1,0 +1,14 @@
+﻿<Window x:Class="Tourism_Management_System.cruise_PDF"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tourism_Management_System"
+        mc:Ignorable="d"
+        Title="Cruise details" Height="679.361" Width="737.117" Loaded="Window_Loaded">
+    <Viewbox Stretch="Fill">
+        <Grid>
+            <WebBrowser x:Name="wb_cruise" HorizontalAlignment="Left" Height="591" VerticalAlignment="Top" Width="738"/>
+        </Grid>
+    </Viewbox>
+</Window>

@@ -1,0 +1,520 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{079CA572-E69C-4259-9BD4-15838B2C9120}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tourism_Management_System</RootNamespace>
+    <AssemblyName>Tourism Management System</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="add_customer.xaml.cs">
+      <DependentUpon>add_customer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdobeReaderControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdobeReaderControl.Designer.cs">
+      <DependentUpon>AdobeReaderControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="aircontry.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="airline.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="airticket_enquiry.xaml.cs">
+      <DependentUpon>airticket_enquiry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="airticket_order.xaml.cs">
+      <DependentUpon>airticket_order.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="attractbooking.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="attraction.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="attraction_enquiry.xaml.cs">
+      <DependentUpon>attraction_enquiry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="attraction_order.xaml.cs">
+      <DependentUpon>attraction_order.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="attractprice.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cruise.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cruisebooking.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cruiseorganizer.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cruise_enquiry.xaml.cs">
+      <DependentUpon>cruise_enquiry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="cruise_order.xaml.cs">
+      <DependentUpon>cruise_order.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="cruise_PDF.xaml.cs">
+      <DependentUpon>cruise_PDF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="customer.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dbError.xaml.cs">
+      <DependentUpon>dbError.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="driver.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="driverroster.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edit_cust.xaml.cs">
+      <DependentUpon>edit_cust.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="edit_staff.xaml.cs">
+      <DependentUpon>edit_staff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="equipment.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="equipmentlist.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="flightbooking.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="flightclass.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="flightschedule.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="flight_confirm.xaml.cs">
+      <DependentUpon>flight_confirm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="flight_searchForCust.xaml.cs">
+      <DependentUpon>flight_searchForCust.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="hotel.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hotelbooking.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hotel_enquiry.xaml.cs">
+      <DependentUpon>hotel_enquiry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="hotel_order.xaml.cs">
+      <DependentUpon>hotel_order.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow_Staff.xaml.cs">
+      <DependentUpon>MainWindow_Staff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="myprofle.xaml.cs">
+      <DependentUpon>myprofle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="orderHistory_staff.xaml.cs">
+      <DependentUpon>orderHistory_staff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="report.xaml.cs">
+      <DependentUpon>report.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="report_Cust.xaml.cs">
+      <DependentUpon>report_Cust.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="room.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="staff.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="staffmanagment.xaml.cs">
+      <DependentUpon>staffmanagment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="transport_enquiry.xaml.cs">
+      <DependentUpon>transport_enquiry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="vehicle.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vehiclebooking.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vehicle_order.xaml.cs">
+      <DependentUpon>vehicle_order.xaml</DependentUpon>
+    </Compile>
+    <Page Include="add_customer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="airticket_enquiry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="airticket_order.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="attraction_enquiry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="attraction_order.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="cruise_enquiry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="cruise_order.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="cruise_PDF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="dbError.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="edit_cust.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="edit_staff.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="flight_confirm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="flight_searchForCust.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="hotel_enquiry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="hotel_order.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow_Staff.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="myprofle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="orderHistory_staff.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="report.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="report_Cust.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="staffmanagment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="transport_enquiry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="vehicle_order.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="AdobeReaderControl.resx">
+      <DependentUpon>AdobeReaderControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="pdf\EMM10A.pdf" />
+    <None Include="pdf\HCW85A.pdf" />
+    <None Include="pdf\HRO08A.pdf" />
+    <None Include="pdf\HRT04A.pdf" />
+    <None Include="pdf\HRX06A.pdf" />
+    <None Include="pdf\HSC04A.pdf" />
+    <None Include="pdf\HSG04A.pdf" />
+    <None Include="pdf\HSH06A.pdf" />
+    <None Include="pdf\JPD07A.pdf" />
+    <None Include="pdf\SSG06A.pdf" />
+    <None Include="pdf\TSA06A.pdf" />
+    <None Include="pdf\URM12A.pdf" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bg_dark.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\staff_icon\Cheong.jpg" />
+    <Resource Include="Images\staff_icon\Fai.jpg" />
+    <Resource Include="Images\staff_icon\Fan.jpg" />
+    <Resource Include="Images\staff_icon\Han.jpg" />
+    <Resource Include="Images\staff_icon\Kam.jpg" />
+    <Resource Include="Images\staff_icon\Kuen.jpg" />
+    <Resource Include="Images\staff_icon\Lung.jpg" />
+    <Resource Include="Images\staff_icon\Ming.jpg" />
+    <Resource Include="Images\staff_icon\Ning.jpg" />
+    <Resource Include="Images\staff_icon\On.jpg" />
+    <Resource Include="Images\staff_icon\Shun.jpg" />
+    <Resource Include="Images\staff_icon\Tak.jpg" />
+    <Resource Include="Images\staff_icon\yum.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\background\bg_watermark.jpg" />
+    <Resource Include="Images\TT_Logo\TT_Transport.jpg" />
+    <Resource Include="Images\vehiclePhotos\car01.png" />
+    <Resource Include="Images\vehiclePhotos\car02.png" />
+    <Resource Include="Images\vehiclePhotos\car03.png" />
+    <Resource Include="Images\vehiclePhotos\car04.png" />
+    <Resource Include="Images\vehiclePhotos\car05.png" />
+    <Resource Include="Images\vehiclePhotos\car06.png" />
+    <Resource Include="Images\equipPhotos\e01.PNG" />
+    <Resource Include="Images\equipPhotos\e02.PNG" />
+    <Resource Include="Images\equipPhotos\e03.PNG" />
+    <Resource Include="Images\equipPhotos\e04.PNG" />
+    <Resource Include="Images\equipPhotos\e05.png" />
+    <Resource Include="Images\attractionPhotos\AdventureCove.png" />
+    <Resource Include="Images\attractionPhotos\BlueMountain.png" />
+    <Resource Include="Images\attractionPhotos\BridgeClimb.png" />
+    <Resource Include="Images\attractionPhotos\Disneyland.png" />
+    <Resource Include="Images\attractionPhotos\DisneySea.png" />
+    <Resource Include="Images\attractionPhotos\MountFuji.png" />
+    <Resource Include="Images\attractionPhotos\NightSafari.png" />
+    <Resource Include="Images\attractionPhotos\OperaHouse.png" />
+    <Resource Include="Images\attractionPhotos\SEAAquarium.png" />
+    <Resource Include="Images\attractionPhotos\ShrimpFishing.png" />
+    <Resource Include="Images\attractionPhotos\SingaporeZoo.png" />
+    <Resource Include="Images\attractionPhotos\TaipeiTea.png" />
+    <Resource Include="Images\attractionPhotos\TokyoMorning.png" />
+    <Resource Include="Images\attractionPhotos\TraditionalChinese.png" />
+    <Resource Include="Images\attractionPhotos\TraditionalJapanese.png" />
+    <Resource Include="Images\attractionPhotos\UniversalStudios.png" />
+    <Resource Include="Images\attractionPhotos\Yangmingshan.png" />
+    <Resource Include="Images\TT_Logo\TT_Air.jpg" />
+    <Resource Include="Images\TT_Logo\TT_Attraction.jpg" />
+    <Resource Include="Images\TT_Logo\TT_Cruise.jpg" />
+    <Resource Include="Images\TT_Logo\TT_General.jpg" />
+    <Resource Include="Images\TT_Logo\TT_Hotel.jpg" />
+    <Resource Include="Images\TT_Logo\TT_Saver.jpg" />
+    <Resource Include="Images\airline_logo\Carrier1.png" />
+    <Resource Include="Images\airline_logo\Carrier10.png" />
+    <Resource Include="Images\airline_logo\Carrier11.png" />
+    <Resource Include="Images\airline_logo\Carrier12.png" />
+    <Resource Include="Images\airline_logo\Carrier2.png" />
+    <Resource Include="Images\airline_logo\Carrier3.png" />
+    <Resource Include="Images\airline_logo\Carrier4.png" />
+    <Resource Include="Images\airline_logo\Carrier5.png" />
+    <Resource Include="Images\airline_logo\Carrier6.png" />
+    <Resource Include="Images\airline_logo\Carrier7.png" />
+    <Resource Include="Images\airline_logo\Carrier8.png" />
+    <Resource Include="Images\airline_logo\Carrier9.png" />
+    <Resource Include="Images\Backup-icon.png" />
+    <Resource Include="Images\login.png" />
+    <Resource Include="Images\login-logo.png" />
+    <Resource Include="Images\login-bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\User-Profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\vehiclePhotos\car07.png" />
+    <Resource Include="Images\vehiclePhotos\car08.png" />
+    <Resource Include="Images\vehiclePhotos\car09.png" />
+    <Resource Include="Images\vehiclePhotos\car10.png" />
+    <Resource Include="Images\vehiclePhotos\car11.png" />
+    <Resource Include="Images\vehiclePhotos\car12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\staff_icon\noicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

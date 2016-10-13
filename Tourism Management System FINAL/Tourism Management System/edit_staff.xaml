@@ -1,0 +1,36 @@
+﻿<Window x:Class="Tourism_Management_System.edit_staff"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tourism_Management_System"
+        mc:Ignorable="d"
+        Title="Staff Edit " Height="356.158" Width="680.526" Loaded="Window_Loaded">
+    <Grid>
+        <Label x:Name="label" Content="Staff ID:" HorizontalAlignment="Left" Margin="13,23,0,0" VerticalAlignment="Top" Width="61" FontSize="14"/>
+
+        <TextBox x:Name="txt_staffid"  VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="28" Margin="88,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" FontSize="14"/>
+        <Label x:Name="label_Copy" Content="Staff Name:" HorizontalAlignment="Left" Margin="394,23,0,0" VerticalAlignment="Top" Width="106" FontSize="14"/>
+        <TextBox x:Name="txt_staffname" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="28" Margin="506,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" FontSize="14"/>
+        <Label x:Name="label_Copy1" Content="Password:" HorizontalAlignment="Left" Margin="13,73,0,0" VerticalAlignment="Top" Width="78" FontSize="14"/>
+        <TextBox x:Name="txt_staffpassword" VerticalContentAlignment="Center"  HorizontalAlignment="Left" Height="28" Margin="88,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" FontSize="14"/>
+        <ComboBox x:Name="cb_Gender" VerticalContentAlignment="Center"  HorizontalAlignment="Left" Margin="88,117,0,0" VerticalAlignment="Top" Width="274" Loaded="cb_Gender_Loaded" FontSize="14" Height="28"/>
+        <Label x:Name="label_Copy2" Content="Gender:" HorizontalAlignment="Left" Margin="13,117,0,0" VerticalAlignment="Top" Width="61" FontSize="14"/>
+        <ComboBox x:Name="cb_Center" VerticalContentAlignment="Center"  HorizontalAlignment="Left" Margin="506,118,0,0" VerticalAlignment="Top" Width="147" Loaded="cb_Center_Loaded" FontSize="14" Height="28"/>
+        <Label x:Name="label_Copy3" Content="Center:" HorizontalAlignment="Left" Margin="394,118,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
+        <ComboBox x:Name="cb_Position" VerticalContentAlignment="Center"  HorizontalAlignment="Left" Margin="88,161,0,0" VerticalAlignment="Top" Width="274" Loaded="cb_Position_Loaded" FontSize="14" Height="28"/>
+        <Label x:Name="label_Copy4"  Content="Position:" HorizontalAlignment="Left" Margin="13,161,0,0" VerticalAlignment="Top" Width="73" FontSize="14"/>
+        <ComboBox x:Name="cb_type" VerticalContentAlignment="Center"  HorizontalAlignment="Left" Margin="506,162,0,0" VerticalAlignment="Top" Width="147" Loaded="cb_type_Loaded" FontSize="14" Height="28"/>
+        <Label x:Name="label_Copy5" Content="Type:" HorizontalAlignment="Left" Margin="394,162,0,0" VerticalAlignment="Top" Width="57" FontSize="14"/>
+        <Label x:Name="label_Copy6" Content="Salary:" HorizontalAlignment="Left" Margin="394,74,0,0" VerticalAlignment="Top" Width="66" FontSize="14"/>
+        <TextBox x:Name="txt_salary" VerticalContentAlignment="Center"  HorizontalAlignment="Left" Height="27" Margin="506,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" FontSize="14"/>
+        <Label x:Name="label_Copy7" Content="Staff Email:" HorizontalAlignment="Left" Margin="11,209,0,0" VerticalAlignment="Top" Width="98" FontSize="14"/>
+        <TextBox x:Name="txt_staffEmail" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="28" Margin="95,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="14"/>
+        <Label x:Name="label1" Content="@tt.com" HorizontalAlignment="Left" Margin="177,210,0,0" VerticalAlignment="Top" Width="71" FontSize="14"/>
+        <Button x:Name="btn_edit" Content="Edit" HorizontalAlignment="Left" Margin="394,272,0,0" VerticalAlignment="Top" Width="112" Height="37" FontSize="14" Click="btn_edit_Click"/>
+        <Button x:Name="btn_cancel" Content="Cancel" HorizontalAlignment="Left" Margin="539,272,0,0" VerticalAlignment="Top" Width="114" Height="37" FontSize="14" Click="btn_cancel_Click"/>
+        <Label x:Name="label_Copy8" Content="Late:" HorizontalAlignment="Left" Margin="394,209,0,0" VerticalAlignment="Top" Width="66" FontSize="14"/>
+        <TextBox x:Name="txt_late" VerticalContentAlignment="Center"  HorizontalAlignment="Left" Height="27" Margin="506,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" FontSize="14"/>
+
+    </Grid>
+</Window>

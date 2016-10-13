@@ -1,0 +1,14 @@
+﻿<Window x:Class="Tourism_Management_System.dbError"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tourism_Management_System"
+        mc:Ignorable="d"
+        Title="DataBase Connection Error" Height="132.034" Width="307.521" ResizeMode="NoResize" Loaded="Window_Loaded" WindowStyle="None">
+    <Grid>
+        <Label x:Name="label" Content="Waiting for reconnect to database server" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="282"/>
+        <Label x:Name="label1" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="10,65,0,0" VerticalAlignment="Top" Width="288"/>
+
+    </Grid>
+</Window>

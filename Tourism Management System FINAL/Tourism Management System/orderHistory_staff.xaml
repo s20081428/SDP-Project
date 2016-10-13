@@ -1,0 +1,26 @@
+﻿<Window x:Class="Tourism_Management_System.orderHistory_staff"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tourism_Management_System"
+        mc:Ignorable="d"
+        Title="Order History" Height="403.306" Width="596.694" ResizeMode="NoResize">
+    <Grid>
+        <Button x:Name="btn_showAll" Content="Show All" HorizontalAlignment="Left" Margin="45,63,0,0" VerticalAlignment="Top" Width="75" Click="btn_showAll_Click"/>
+        <Button x:Name="btn_showToday" Content="Show Today" HorizontalAlignment="Left" Margin="167,63,0,0" VerticalAlignment="Top" Width="75" Click="btn_showToday_Click"/>
+        <Button x:Name="btn_showMonth" Content="Show Past Month" HorizontalAlignment="Left" Margin="439,63,0,0" VerticalAlignment="Top" Width="108" Click="btn_showMonth_Click"/>
+        <DataGrid x:Name="dg_orderHistoryResult" HorizontalAlignment="Left" Margin="19,95,0,0" VerticalAlignment="Top" Height="206" Width="552">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=OrderType}" ClipboardContentBinding="{x:Null}" Header="Order Type"/>
+                <DataGridTextColumn Binding="{Binding Path=TotalAmt}" ClipboardContentBinding="{x:Null}" Header="Totol Amount"/>
+                <DataGridTextColumn Binding="{Binding Path=OrderDate}" ClipboardContentBinding="{x:Null}" Header="Order Date"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="txt_total" HorizontalAlignment="Left" Height="23" Margin="451,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lab_total" Content="Personal Sales Amount:" HorizontalAlignment="Left" Margin="167,315,0,0" VerticalAlignment="Top" Width="279"/>
+        <Button x:Name="btn_showWeek" Content="Show Past Week" HorizontalAlignment="Left" Margin="304,63,0,0" VerticalAlignment="Top" Width="98" Click="btn_showWeek_Click"/>
+        <Label x:Name="label" Content="Order History Enquiry" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="16" Width="568"/>
+
+    </Grid>
+</Window>

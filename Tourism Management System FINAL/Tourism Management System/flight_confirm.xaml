@@ -1,0 +1,45 @@
+﻿<Window x:Class="Tourism_Management_System.flight_confirm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Flight Booking Confirmation" Height="505.426" Width="819.036" Loaded="Window_Loaded" Icon="Images/Backup-icon.png" SizeChanged="Window_SizeChanged">
+    <Viewbox Stretch="Uniform">
+        <Grid Margin="0,0,2,2" Height="438" Width="748">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images/background/bg_watermark.jpg" Opacity="0.185"/>
+            </Grid.Background>
+            <TextBox x:Name="txt_cust" HorizontalAlignment="Left" Height="35" Margin="547,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontSize="17" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" />
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="26,25,0,0" TextWrapping="Wrap" Text="Flight Booking Confirmation" VerticalAlignment="Top" Height="35" Width="336" FontSize="22" TextDecorations="{x:Null}"/>
+            <Label x:Name="label" Content="Customer ID" HorizontalAlignment="Left" Margin="429,25,0,0" VerticalAlignment="Top" Height="35" Width="113" FontSize="17"/>
+            <TextBox x:Name="txt_total" HorizontalAlignment="Left" Height="38" Margin="559,353,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+            <Label Content="Total fee (with Tax):" HorizontalAlignment="Left" Margin="410,357,0,0" VerticalAlignment="Top" Width="147" FontSize="15"/>
+            <Label Content="Flight No" HorizontalAlignment="Left" Margin="31,201,0,0" VerticalAlignment="Top" Width="74" />
+            <TextBox x:Name="txt_flightNo" HorizontalAlignment="Left" Height="23" Margin="109,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+            <Label Content="Derpat Date" HorizontalAlignment="Left" Margin="316,200,0,0" VerticalAlignment="Top" Height="26" Width="83"/>
+            <TextBox x:Name="txt_departDate" HorizontalAlignment="Left" Height="23" Margin="399,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+            <Label Content="Class" HorizontalAlignment="Left" Margin="31,247,0,0" VerticalAlignment="Top" Width="73"  />
+            <TextBox x:Name="txt_Class" HorizontalAlignment="Left" Height="23" Margin="109,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+            <Label Content="Person" HorizontalAlignment="Left" Margin="97,292,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <TextBox x:Name="txt_person_Adult" HorizontalAlignment="Left" Height="23" Margin="98,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+            <Label Content="Booking ID&#xA;" HorizontalAlignment="Left" Margin="31,152,0,0" VerticalAlignment="Top" Width="75" Height="27"/>
+            <TextBox x:Name="txt_bookingID" HorizontalAlignment="Left" Height="23" Margin="109,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+            <Label Content="Derpat Time" HorizontalAlignment="Left" Margin="316,247,0,0" VerticalAlignment="Top" Height="25" Width="83"/>
+            <TextBox x:Name="txt_departTime" HorizontalAlignment="Left" Height="23" Margin="399,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+            <Label Content="Order Date" HorizontalAlignment="Left" Margin="316,154,0,0" VerticalAlignment="Top" Height="25" Width="83"/>
+            <TextBox x:Name="txt_orderDate" HorizontalAlignment="Left" Height="23" Margin="399,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+            <Label Content="Adult" HorizontalAlignment="Left" Margin="30,314,0,0" VerticalAlignment="Top" Width="63"/>
+            <TextBox x:Name="txt_person_Child" HorizontalAlignment="Left" Height="23" Margin="98,349,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+            <Label Content="Child" HorizontalAlignment="Left" Margin="30,345,0,0" VerticalAlignment="Top" Width="63"/>
+            <TextBox x:Name="txt_person_Infant" HorizontalAlignment="Left" Height="23" Margin="98,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+            <Label Content="Infant" HorizontalAlignment="Left" Margin="30,376,0,0" VerticalAlignment="Top" Width="63"/>
+            <Label Content="Price" HorizontalAlignment="Left" Margin="245,292,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txt_price_Adult" HorizontalAlignment="Left" Height="23" Margin="246,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+            <TextBox x:Name="txt_price_Child" HorizontalAlignment="Left" Height="23" Margin="246,349,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+            <TextBox x:Name="txt_price_Infant" HorizontalAlignment="Left" Height="23" Margin="246,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+            <Button x:Name="btn_print" Content="Print" HorizontalAlignment="Left" Margin="599,203,0,0" VerticalAlignment="Top" Width="101" Click="btn_print_Click" Height="38"/>
+            <TextBox x:Name="txt_from" HorizontalAlignment="Left" Height="39" Margin="187,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" FontSize="18" Foreground="Blue"/>
+            <TextBox x:Name="txt_To" HorizontalAlignment="Left" Height="39" Margin="431,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" FontSize="18" Foreground="Red"/>
+            <Label x:Name="label1" Content="→" HorizontalAlignment="Left" Margin="339,67,0,0" VerticalAlignment="Top" Height="66" Width="81" FontSize="60" FontFamily="Microsoft YaHei UI" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+        </Grid>
+    </Viewbox>
+</Window>
